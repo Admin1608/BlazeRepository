@@ -53,8 +53,14 @@ public class Dummy extends CommFunc {
         
         cf.SELECTBYINDEX("MaritalStatus",2, driver,properties);
         
+        cf.CLEAR("NumberofDependentsAdults", driver, properties);
         cf.INPUT("NumberofDependentsAdults","NumberofDependentsAdulltsValue", driver, properties);
+        
+        cf.CLEAR("NumberofDependentsChildrens", driver, properties);
         cf.INPUT("NumberofDependentsChildrens","NumberofDependentsChildrensValue", driver, properties);
+        
+        cf.CLEAR("NumberofMotorVehicles", driver, properties);
+        cf.INPUT("NumberofMotorVehicles","NumberofMotorVehiclesValue", driver, properties);
         
         cf.SELECTBYINDEX("LivingWorking",2, driver,properties);
         cf.SELECTBYINDEX("Countryofbirth",13, driver,properties);
@@ -120,8 +126,14 @@ public class Dummy extends CommFunc {
         
         cf.SELECTBYINDEX("MaritalStatus2",2, driver,properties);
         
+        cf.CLEAR("NumberofDependentsAdults2", driver, properties);
         cf.INPUT("NumberofDependentsAdults2","NumberofDependentsAdulltsValue", driver, properties);
+        
+        cf.CLEAR("NumberofDependentsChildrens2", driver, properties);
         cf.INPUT("NumberofDependentsChildrens2","NumberofDependentsChildrensValue", driver, properties);
+        
+        cf.CLEAR("NumberofMotorVehicles2", driver, properties);
+        cf.INPUT("NumberofMotorVehicles2","NumberofMotorVehiclesValue", driver, properties);
         
         cf.SELECTBYINDEX("LivingWorking2",2, driver,properties);
         cf.SELECTBYINDEX("Countryofbirth2",13, driver,properties);
@@ -186,8 +198,15 @@ public class Dummy extends CommFunc {
         
         cf.SELECTBYINDEX("GMaritalStatus",2, driver,properties);
         
+                
+        cf.CLEAR("GNumberofDependentsAdults", driver, properties);
         cf.INPUT("GNumberofDependentsAdults","NumberofDependentsAdulltsValue", driver, properties);
+        
+        cf.CLEAR("GNumberofDependentsChildrens", driver, properties);
         cf.INPUT("GNumberofDependentsChildrens","NumberofDependentsChildrensValue", driver, properties);
+        
+        cf.CLEAR("GNumberofMotorVehicles", driver, properties);
+        cf.INPUT("GNumberofMotorVehicles","NumberofMotorVehiclesValue", driver, properties);
         
         cf.SELECTBYINDEX("GLivingWorking",2, driver,properties);
         cf.SELECTBYINDEX("GCountryofbirth",13, driver,properties);
