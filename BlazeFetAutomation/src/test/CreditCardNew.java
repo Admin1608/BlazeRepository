@@ -16,39 +16,42 @@ public class CreditCardNew extends CommFunc {
 	
 	public void START() throws Exception
  {
+		
 		cf.CLICK("Login", driver, properties);
-		cf.CLICK("NewApplication", driver, properties);
 		cf.WAIT(2000, driver, properties);
+		
+		cf.CLICK("NewApplication", driver, properties);
+		cf.WAIT(2000, driver, properties);		
         
-        cf.CLICK("Individual",driver,properties);
-        cf.CLICK("Individual",driver,properties);
+        cf.CLICK("Individual", driver, properties);
+        cf.CLICK("Individual", driver, properties);
 		
 		cf.SELECTBYINDEX("ApplicationType",1, driver,properties);
-		cf.SELECTBYINDEX("NumberOfApplicants",1, driver,properties);
-		cf.SELECTBYINDEX("Guarantors",0, driver,properties);
-		
-		//APPLICANT_1		
-		cf.CLICK("Applicant1Expand",driver,properties);		
-	 		 	
-	 	cf.SELECTBYINDEX("CustomerType",1, driver,properties);
+		//cf.SELECTBYINDEX("NumberOfApplicants",1, driver,properties);
 	
-		cf.CLICK("New",driver,properties);
-        cf.CLICK("New",driver,properties);
+		cf.CLICK("Applicant1Expand",driver,properties);		
+		 	
+	 	cf.SELECTBYINDEX("CustomerType",1, driver,properties);
+	 	
+		cf.CLICK("New", driver, properties);
+		cf.CLICK("New", driver, properties);
 		
 		cf.SELECTBYINDEX("title",1, driver,properties);
 		
 		cf.INPUT("FirstName","FirstNamevalue", driver, properties);
-		cf.INPUT("lastname","LastNameValue", driver, properties);
+		cf.INPUT("MiddleName","MiddleNameValue", driver, properties);
+		cf.INPUT("lastname","LastNameValue", driver, properties);		
 		cf.INPUT("DOB","DOBValue1", driver, properties);
 		cf.INPUT("ContactNumber1","ContactNumber1Value", driver, properties);
 		cf.INPUT("ContactNumber2","ContactNumber2Value", driver, properties);
 		cf.INPUT("Emailaddress","Emailaddressvalue", driver, properties);
+		cf.INPUT("MotherMaidenName","MotherMaidenNameValue", driver, properties);
 		
 		cf.SELECTBYINDEX("ResidentialStatus",1, driver,properties);
 		
-		cf.CLICK("PEP",driver,properties);
-        cf.CLICK("PEP",driver,properties);
-		
+        
+        cf.CLICK("PEP", driver, properties);
+        cf.CLICK("PEP", driver, properties);
         
         cf.SELECTBYINDEX("Years",3, driver,properties);
         cf.SELECTBYINDEX("Month",3, driver,properties);
@@ -63,8 +66,14 @@ public class CreditCardNew extends CommFunc {
         
         cf.SELECTBYINDEX("MaritalStatus",2, driver,properties);
         
+        cf.CLEAR("NumberofDependentsAdults", driver, properties);
         cf.INPUT("NumberofDependentsAdults","NumberofDependentsAdulltsValue", driver, properties);
+        
+        cf.CLEAR("NumberofDependentsChildrens", driver, properties);
         cf.INPUT("NumberofDependentsChildrens","NumberofDependentsChildrensValue", driver, properties);
+        
+        cf.CLEAR("NumberofMotorVehicles", driver, properties);
+        cf.INPUT("NumberofMotorVehicles","NumberofMotorVehiclesValue", driver, properties);
         
         cf.SELECTBYINDEX("LivingWorking",2, driver,properties);
         cf.SELECTBYINDEX("Countryofbirth",13, driver,properties);
@@ -94,10 +103,23 @@ public class CreditCardNew extends CommFunc {
         cf.INPUT("AddressofRelative","AddressofRelativeLine1", driver, properties);
         cf.INPUT("AddressofRelative2","AddressofRelativeLine2", driver, properties);
         
+        cf.SELECTBYINDEX("EmployementStatus",2, driver,properties);
         cf.SELECTBYINDEX("Occuption",14, driver,properties);
         cf.SELECTBYINDEX("IndustryCodes",14, driver,properties);
         
+        cf.INPUT("JobTitle","JobTitleValue", driver, properties);
+        cf.INPUT("EmployerName","EmployerNameValue", driver, properties);
+        
+        cf.SELECTBYINDEX("YearswithCurrentEmployer",6, driver,properties);
+        
+        cf.INPUT("CurrentEmployerAddress","CurrentEmployerAddressValue", driver, properties);
+        
+        cf.CLICK("ROUCNO", driver, properties);
+        cf.CLICK("CustomerArreasNo", driver, properties);
+        cf.CLICK("Save", driver, properties);
+        cf.WAIT(5000, driver, properties);
         cf.CLICK("Continue", driver, properties);
+		
                     
         cf.WAIT(2000, driver, properties);
         
@@ -109,14 +131,17 @@ public class CreditCardNew extends CommFunc {
         
         cf.SELECTBYINDEX("FacilityType",1, driver, properties); 
         
+        cf.CLEAR("RequestedLimit", driver, properties);
         cf.INPUT("RequestedLimit", "RLValue", driver, properties);
         
         cf.SELECTBYINDEX("LoanPurposeCC",4, driver, properties);      
       
         cf.WAIT(1000, driver, properties);
-        
+        cf.CLICK("Save", driver, properties);        
+        cf.WAIT(5000, driver, properties);        
         cf.CLICK("Continue", driver, properties);
-        cf.CLICK("IncomeDetailsExpand", driver, properties);
+        
+        /*cf.CLICK("IncomeDetailsExpand", driver, properties);
         
         cf.WAIT(1000, driver, properties);
         
@@ -167,7 +192,7 @@ public class CreditCardNew extends CommFunc {
         cf.CLICK("Submit", driver, properties);
         cf.WAIT(2000, driver, properties);
         String value= cf.ALERT("ok", driver, properties);
-        System.out.println(value);
+        System.out.println(value);*/
         
 }
 }

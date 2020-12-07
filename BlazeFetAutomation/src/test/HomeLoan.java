@@ -9,43 +9,51 @@ import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
 
 @Test
-public class HomeLoanInvestment extends CommFunc {
+public class HomeLoan extends CommFunc {
 
 	CommFunc cf = new CommFunc();
 	
 	public void START() throws Exception
  {
+		cf.CLICK("Login", driver, properties);
+		cf.WAIT(2000, driver, properties);
+		
+		cf.CLICK("NewApplication", driver, properties);
 		cf.WAIT(2000, driver, properties);
         
         cf.CLICK("Individual",driver,properties);
         cf.CLICK("Individual",driver,properties);
 		
 		cf.SELECTBYINDEX("ApplicationType",1, driver,properties);
-		cf.SELECTBYINDEX("NumberOfApplicants",1, driver,properties);
-		cf.SELECTBYINDEX("Guarantors",0, driver,properties);
+		//cf.SELECTBYINDEX("NumberOfApplicants",1, driver,properties);
+		//cf.SELECTBYINDEX("Guarantors",0, driver,properties);
 		
 		//APPLICANT_1		
 		cf.CLICK("Applicant1Expand",driver,properties);		
-	 		 	
+	 	
 	 	cf.SELECTBYINDEX("CustomerType",1, driver,properties);
-	
-		cf.CLICK("New",driver,properties);
-        cf.CLICK("New",driver,properties);
+	 	
+		
+		cf.CLICK("New", driver, properties);
+		cf.CLICK("New", driver, properties);
+		
 		
 		cf.SELECTBYINDEX("title",1, driver,properties);
 		
 		cf.INPUT("FirstName","FirstNamevalue", driver, properties);
-		cf.INPUT("lastname","LastNameValue", driver, properties);
+		cf.INPUT("MiddleName","MiddleNameValue", driver, properties);
+		cf.INPUT("lastname","LastNameValue", driver, properties);		
 		cf.INPUT("DOB","DOBValue1", driver, properties);
 		cf.INPUT("ContactNumber1","ContactNumber1Value", driver, properties);
 		cf.INPUT("ContactNumber2","ContactNumber2Value", driver, properties);
 		cf.INPUT("Emailaddress","Emailaddressvalue", driver, properties);
+		cf.INPUT("MotherMaidenName","MotherMaidenNameValue", driver, properties);
 		
 		cf.SELECTBYINDEX("ResidentialStatus",1, driver,properties);
 		
-		cf.CLICK("PEP",driver,properties);
-        cf.CLICK("PEP",driver,properties);
-		
+        
+        cf.CLICK("PEP", driver, properties);
+        cf.CLICK("PEP", driver, properties);
         
         cf.SELECTBYINDEX("Years",3, driver,properties);
         cf.SELECTBYINDEX("Month",3, driver,properties);
@@ -97,9 +105,21 @@ public class HomeLoanInvestment extends CommFunc {
         cf.INPUT("AddressofRelative","AddressofRelativeLine1", driver, properties);
         cf.INPUT("AddressofRelative2","AddressofRelativeLine2", driver, properties);
         
+        cf.SELECTBYINDEX("EmployementStatus",2, driver,properties);
         cf.SELECTBYINDEX("Occuption",14, driver,properties);
         cf.SELECTBYINDEX("IndustryCodes",14, driver,properties);
         
+        cf.INPUT("JobTitle","JobTitleValue", driver, properties);
+        cf.INPUT("EmployerName","EmployerNameValue", driver, properties);
+        
+        cf.SELECTBYINDEX("YearswithCurrentEmployer",6, driver,properties);
+        
+        cf.INPUT("CurrentEmployerAddress","CurrentEmployerAddressValue", driver, properties);
+        
+        cf.CLICK("ROUCNO", driver, properties);
+        cf.CLICK("CustomerArreasNo", driver, properties);
+        cf.CLICK("Save", driver, properties);
+        cf.WAIT(5000, driver, properties);
         cf.CLICK("Continue", driver, properties);
                     
         cf.WAIT(2000, driver, properties);
@@ -111,37 +131,66 @@ public class HomeLoanInvestment extends CommFunc {
         cf.CLICK("FacilityCatogary", driver, properties);
         cf.CLICK("FacilityCatogary", driver, properties);
         
-        cf.SELECTBYINDEX("InterestRateType", 1, driver, properties);
-        cf.SELECTBYINDEX("TermOfFixedLoan", 2, driver, properties);
-                      
-        cf.INPUT("VariableInterestRate", "VariableInterestRateValue", driver, properties);
+        cf.SELECTBYINDEX("InterestRateType", 2, driver, properties);
+        
+        cf.CLEAR("Discount", driver, properties);
+        cf.INPUT("Discount", "DiscountValue", driver, properties);                      
+        
+        cf.SELECTBYINDEX("IRDiscountApprovedBy",1, driver, properties);
+        
+        cf.CLEAR("LoanTerm", driver, properties);
         cf.INPUT("LoanTerm", "LoanTermValue", driver, properties);
   
         cf.SELECTBYVALUE("RepaymentFreq","RepaymentFreqValue", driver, properties);
-        cf.SELECTBYINDEX("RepaymentMethod", 1, driver, properties);
+        cf.SELECTBYINDEX("RepaymentMethod",1, driver, properties);
         
-        cf.CLICK("IsInterestOnlyLoan", driver, properties);
-        cf.CLICK("IsInterestOnlyLoan", driver, properties);
-        
-        cf.SELECTBYINDEX("D/WApprovedBy", 1, driver, properties);
-        
+        cf.CLICK("IsInterestOnlyLoan", driver, properties);        
         cf.CLICK("LoanMaturity", driver, properties);
-        cf.CLICK("LoanMaturity", driver, properties);
-         
-        //cf.SELECTBYVALUE("LoanPurpose", "LPValue", driver, properties);
-        cf.CLICK("LoanPurpose", driver, properties);
-        cf.CLICK("LoanPurposeOption4", driver, properties);
-                     
-        //cf.CLEAR("AmountRestructured", driver, properties);
-        //cf.INPUT("AmountRestructured", "AmountRestructuredValue", driver, properties);
+        
+        cf.SELECTBYINDEX("LoanPurpose",1, driver, properties);
+        cf.SELECTBYINDEX("LoanPurposeDetail",1, driver, properties);
+        
+        cf.CLEAR("PurposeAmount", driver, properties);
+        cf.INPUT("PurposeAmount", "PurposeAmountValue", driver, properties);
+        
+        cf.CLEAR("ProvidentFundEquity", driver, properties);
+        cf.INPUT("ProvidentFundEquity", "ProvidentFundEquityValue", driver, properties);
+                
+        cf.CLEAR("GovernmentGrantFiji", driver, properties);
+        cf.INPUT("GovernmentGrantFiji", "GovernmentGrantFijiValue", driver, properties);
+                       
+        cf.CLEAR("DeedOfGiftEquity", driver, properties);
+        cf.INPUT("DeedOfGiftEquity", "DeedOfGiftEquityValue", driver, properties);
+        
+        cf.CLEAR("CashContribution", driver, properties);
+        cf.INPUT("CashContribution", "CashContributionValue", driver, properties);
+        
+        cf.CLEAR("SolicitorsCost", driver, properties);
+        cf.INPUT("SolicitorsCost", "SolicitorsCostValue", driver, properties);
+        
+        cf.CLEAR("OtherContributions", driver, properties);
+        cf.INPUT("OtherContributions", "OtherContributionsValue", driver, properties);
+        
+        cf.CLEAR("StampDutyCost", driver, properties);
+        cf.INPUT("StampDutyCost", "StampDutyCostValue", driver, properties);
+        
+        //cf.CLEAR("ContributionTradeInValue", driver, properties);
+        //cf.INPUT("ContributionTradeInValue", "ContributionTradeInValueValue", driver, properties);
+        
+        cf.CLEAR("OtherCosts", driver, properties);
+        cf.INPUT("OtherCosts", "OtherCostsValue", driver, properties);
+        
+        cf.CLICK("OwnSource", driver, properties);
+        cf.CLICK("OwnSource", driver, properties);
         
         cf.CLEAR("LoanApprovalFee", driver, properties);
         cf.INPUT("LoanApprovalFee", "LoanApprovalFeeValue", driver, properties);
         
-        cf.SELECTBYINDEX("LAFDiscount",1, driver, properties);
+        cf.SELECTBYINDEX("LAFDiscount",3, driver, properties);
          
         cf.WAIT(1000, driver, properties);
-        
+        cf.CLICK("Save", driver, properties);
+        cf.WAIT(5000, driver, properties);
         cf.CLICK("Continue", driver, properties);
         
         //SecurityDetails
@@ -228,7 +277,6 @@ public class HomeLoanInvestment extends CommFunc {
         cf.WAIT(2000, driver, properties);
         String value= cf.ALERT("ok", driver, properties);
         System.out.println(value);
-        
 }
 }
 

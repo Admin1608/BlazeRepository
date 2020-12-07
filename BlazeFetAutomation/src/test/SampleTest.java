@@ -3,6 +3,7 @@ package test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
@@ -12,37 +13,54 @@ public class SampleTest extends CommFunc {
 	
 	CommFunc cf = new CommFunc();
 	
+	
 	public void Creditcardunsecuredmethod() throws Exception
 	{
 		cf.CLICK("Login", driver, properties);
 		cf.WAIT(2000, driver, properties);
 		
 		cf.CLICK("NewApplication", driver, properties);
-		cf.WAIT(2000, driver, properties);
-		
-        cf.DOUBLECLICK(action,"Joint" , driver, properties);
+		cf.WAIT(2000, driver, properties);		
+        
+        cf.CLICK("Individual", driver, properties);
+        cf.CLICK("Individual", driver, properties);
 		
 		cf.SELECTBYINDEX("ApplicationType",1, driver,properties);
-		cf.SELECTBYINDEX("NumberOfApplicants",1, driver,properties);
+		//cf.SELECTBYINDEX("NumberOfApplicants",1, driver,properties);
 	
 		cf.CLICK("Applicant1Expand",driver,properties);		
 		 	
 	 	cf.SELECTBYINDEX("CustomerType",1, driver,properties);
 	 	
-		cf.DOUBLECLICK(action,"New" , driver, properties);
+		cf.CLICK("New", driver, properties);
+		cf.CLICK("New", driver, properties);
 		
 		cf.SELECTBYINDEX("title",1, driver,properties);
 		
-		cf.INPUT("FirstName","FirstNamevalue", driver, properties);
-		cf.INPUT("lastname","LastNameValue", driver, properties);
+		Actions act = new Actions(driver);	
+		act.clickAndHold();		
+		//System.out.println("hi1");
+	    act.sendKeys("someone");
+	    act.build().perform();
+	    System.out.println("hi2");
+	    act.sendKeys(Keys.TAB);
+	    System.out.println("hi3");
+	    act.build().perform();
+		
+		/*cf.INPUT("FirstName","FirstNamevalue", driver, properties);
+		cf.INPUT("MiddleName","MiddleNameValue", driver, properties);
+		cf.INPUT("lastname","LastNameValue", driver, properties);		
 		cf.INPUT("DOB","DOBValue1", driver, properties);
 		cf.INPUT("ContactNumber1","ContactNumber1Value", driver, properties);
 		cf.INPUT("ContactNumber2","ContactNumber2Value", driver, properties);
 		cf.INPUT("Emailaddress","Emailaddressvalue", driver, properties);
+		cf.INPUT("MotherMaidenName","MotherMaidenNameValue", driver, properties);
 		
 		cf.SELECTBYINDEX("ResidentialStatus",1, driver,properties);
 		
-        cf.DOUBLECLICK(action,"PEP" , driver, properties);
+        
+        cf.CLICK("PEP", driver, properties);
+        cf.CLICK("PEP", driver, properties);
         
         cf.SELECTBYINDEX("Years",3, driver,properties);
         cf.SELECTBYINDEX("Month",3, driver,properties);
@@ -94,10 +112,22 @@ public class SampleTest extends CommFunc {
         cf.INPUT("AddressofRelative","AddressofRelativeLine1", driver, properties);
         cf.INPUT("AddressofRelative2","AddressofRelativeLine2", driver, properties);
         
+        cf.SELECTBYINDEX("EmployementStatus",2, driver,properties);
         cf.SELECTBYINDEX("Occuption",14, driver,properties);
         cf.SELECTBYINDEX("IndustryCodes",14, driver,properties);
         
-        cf.CLICK("Continue", driver, properties);
+        cf.INPUT("JobTitle","JobTitleValue", driver, properties);
+        cf.INPUT("EmployerName","EmployerNameValue", driver, properties);
+        
+        cf.SELECTBYINDEX("YearswithCurrentEmployer",6, driver,properties);
+        
+        cf.INPUT("CurrentEmployerAddress","CurrentEmployerAddressValue", driver, properties);
+        
+        cf.CLICK("ROUCNO", driver, properties);
+        cf.CLICK("CustomerArreasNo", driver, properties);
+        cf.CLICK("Save", driver, properties);
+        cf.WAIT(5000, driver, properties);
+        cf.CLICK("Continue", driver, properties);*/
 		
 		
 	   

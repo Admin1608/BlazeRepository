@@ -16,7 +16,7 @@ public class Dummy extends CommFunc {
 		
 		cf.DOUBLECLICK(action,"Joint" , driver, properties);
 		
-		cf.SELECTBYINDEX("ApplicationType",1, driver,properties);
+		cf.SELECTBYINDEX("ApplicationType",3, driver,properties);
 		cf.SELECTBYINDEX("NumberOfApplicants",2, driver,properties);
 		cf.SELECTBYINDEX("Guarantors",2, driver,properties);
 		

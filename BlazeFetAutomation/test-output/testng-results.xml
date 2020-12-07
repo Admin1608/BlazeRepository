@@ -2,16 +2,16 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="34999" started-at="2020-11-18T08:35:45Z" finished-at="2020-11-18T08:36:20Z">
+  <suite name="Default suite" duration-ms="13817" started-at="2020-12-05T13:38:19Z" finished-at="2020-12-05T13:38:33Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="34999" started-at="2020-11-18T08:35:45Z" finished-at="2020-11-18T08:36:20Z">
+    <test name="Default test" duration-ms="13817" started-at="2020-12-05T13:38:19Z" finished-at="2020-12-05T13:38:33Z">
       <class name="test.SampleTest">
-        <test-method status="PASS" signature="Base()[pri:0, instance:test.SampleTest@458c1321]" name="Base" is-config="true" duration-ms="9097" started-at="2020-11-18T08:35:45Z" finished-at="2020-11-18T08:35:54Z">
+        <test-method status="PASS" signature="Base()[pri:0, instance:test.SampleTest@458c1321]" name="Base" is-config="true" duration-ms="7630" started-at="2020-12-05T13:38:19Z" finished-at="2020-12-05T13:38:27Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Base -->
-        <test-method status="PASS" signature="Creditcardunsecuredmethod()[pri:0, instance:test.SampleTest@458c1321]" name="Creditcardunsecuredmethod" duration-ms="25780" started-at="2020-11-18T08:35:54Z" finished-at="2020-11-18T08:36:20Z">
+        <test-method status="PASS" signature="Creditcardunsecuredmethod()[pri:0, instance:test.SampleTest@458c1321]" name="Creditcardunsecuredmethod" duration-ms="6091" started-at="2020-12-05T13:38:27Z" finished-at="2020-12-05T13:38:33Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Creditcardunsecuredmethod -->
